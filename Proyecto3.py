@@ -47,3 +47,17 @@ def evaluar_expresion():
         messagebox.showerror("Error", "División por cero no permitida.")
     except Exception as e:
         messagebox.showerror("Error", str(e))
+        # Configuración de la ventana principal
+root = tk.Tk()
+root.title("Calculadora Modular")
+root.geometry("400x650")
+
+# Entrada de la expresión
+entry_pantalla = tk.Entry(root, font=("Arial", 24), bd=10, insertwidth=2, width=14, borderwidth=4)
+entry_pantalla.grid(row=0, column=0, columnspan=4)
+
+# Entrada para el módulo
+entry_modulo = tk.Entry(root, font=("Arial", 18), width=8)
+entry_modulo.grid(row=1, column=2, columnspan=2)
+label_modulo = tk.Label(root, text="Modulo:", font=("Arial", 18))
+label_modulo.grid(row=1, column=0, columnspan=2)
