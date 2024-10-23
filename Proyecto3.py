@@ -15,3 +15,14 @@ def click(boton_texto):
     actual = entry_pantalla.get()
     entry_pantalla.delete(0, tk.END)
     entry_pantalla.insert(tk.END, actual + boton_texto)
+
+# Función para limpiar la pantalla
+def clear():
+    entry_pantalla.delete(0, tk.END)
+
+# Función para borrar un solo carácter (el último)
+def borrar_ultimo():
+    actual = entry_pantalla.get()
+    if actual:
+        # Borra el último carácter de la cadena
+        entry_pantalla.delete(len(actual) - 1, tk.END)
