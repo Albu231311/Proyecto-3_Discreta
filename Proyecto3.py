@@ -60,4 +60,13 @@ entry_pantalla.grid(row=0, column=0, columnspan=4)
 entry_modulo = tk.Entry(root, font=("Arial", 18), width=8)
 entry_modulo.grid(row=1, column=2, columnspan=2)
 label_modulo = tk.Label(root, text="Modulo:", font=("Arial", 18))
-label_modulo.grid(row=1, column=0, columnspan=2)
+label_modulo.grid(row=1, column=0,columnspan=2)
+
+# Crear los botones de la calculadora
+botones = [
+    ('7', 2, 0), ('8', 2, 1), ('9', 2, 2), ('/', 2, 3),
+    ('4', 3, 0), ('5', 3, 1), ('6', 3, 2), ('*', 3, 3),
+    ('1', 4, 0), ('2', 4, 1), ('3', 4, 2), ('-', 4, 3),
+    ('0', 5, 0), ('(', 5, 1), (')', 5, 2), ('+', 5, 3),
+    ('AC', 6, 0), ('^', 6, 1), ('DEL', 6, 2), ('=', 6, 3),
+]
