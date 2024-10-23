@@ -26,3 +26,24 @@ def borrar_ultimo():
     if actual:
         # Borra el último carácter de la cadena
         entry_pantalla.delete(len(actual) - 1, tk.END)
+
+# Función para evaluar la expresión
+def evaluar_expresion():
+    try:
+        expresion = entry_pantalla.get()  # Obtener la expresión de la pantalla
+        p = int(entry_modulo.get())  # Obtener el valor del módulo
+        
+        if not es_primo(p):
+            messagebox.showerror("Error", "El módulo debe ser un número primo.")
+            return
+        
+        # Evaluar la expresión
+        resultado = eval(expresion.replace("^", "*"))  # Reemplazar ^ con * para exponenciación en Python
+        # Aplicar el módulo
+        resultado_mod = resultado % p
+        entry_pantalla.delete(0, tk.END)
+        entry_pantalla.insert(tk.END, str(resultado_mod))
+    except ZeroDivisionError:
+        messagebox.showerror("Error", "División por cero no permitida.")
+    except Exception as e:
+        messagebox.showerror("Error", str(e))
