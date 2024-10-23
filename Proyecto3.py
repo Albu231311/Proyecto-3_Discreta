@@ -70,3 +70,18 @@ botones = [
     ('0', 5, 0), ('(', 5, 1), (')', 5, 2), ('+', 5, 3),
     ('AC', 6, 0), ('^', 6, 1), ('DEL', 6, 2), ('=', 6, 3),
 ]
+
+# Función para asignar los botones
+for (texto, fila, columna) in botones:
+    if texto == 'AC':
+        boton = tk.Button(root, text=texto, padx=20, pady=20, font=("Arial", 18), command=clear)
+    elif texto == 'DEL':
+        boton = tk.Button(root, text=texto, padx=20, pady=20, font=("Arial", 18), command=borrar_ultimo)
+    elif texto == '=':
+        boton = tk.Button(root, text=texto, padx=20, pady=20, font=("Arial", 18), command=evaluar_expresion)
+    else:
+        boton = tk.Button(root, text=texto, padx=20, pady=20, font=("Arial", 18), command=lambda txt=texto: click(txt))
+    boton.grid(row=fila, column=columna)
+
+# Ejecutar la interfaz
+root.mainloop()
